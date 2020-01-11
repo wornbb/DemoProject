@@ -1,6 +1,7 @@
 # DemoProject
 ##Objective
 The object of this project is to build & publish a WebView Android App for demonstrating our skills of software development engineer. We probably will also provide access from browser which converts it to a website. 
+A sample of static website is provided at https://wornbb.github.io/DemoProject/FrontEnd/
 ## Tech Stack
 Note: The tech is decided based on their effectiveness of demonstrating our skills rather than their fitness or necessity for the functionality of the app. 
 ### Front-end: 
