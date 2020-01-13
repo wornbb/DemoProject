@@ -50,6 +50,7 @@ hr {
 
 #title {
   color: #ffffff;
+  padding-top: 4%;
 }
 
 #title .container-fluid {
@@ -62,10 +63,10 @@ hr {
   font-weight: 900;
 }
 
-.navbar {
-  padding: 0 0 8rem;
-}
 
+.navbar {
+  background-color: #5f6769;
+}
 .navbar-brand {
   font-family: "Indie Flower", cursive;
   font-size: 2.5rem;
@@ -73,7 +74,7 @@ hr {
 }
 
 .nav-item {
-  padding: 0 18px;
+  padding: 0 10px;
 }
 
 .nav-link {

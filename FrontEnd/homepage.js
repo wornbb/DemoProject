@@ -1,3 +1,7 @@
+
+
+
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -13,7 +17,9 @@ app.get("/", function(req, res){
     res.render("home");
 });
 
-
+app.get("/signup", function(req, res){
+    res.render("signup");
+});
 
 app.listen("3000", function(){
     console.log("Listening on port 3000.")
