@@ -58,7 +58,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, '../../FrontEnd/'),
         ],
-        #'APP_DIRS': True,
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

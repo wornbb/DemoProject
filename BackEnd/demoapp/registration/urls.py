@@ -1,8 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
-from django.conf import settings
-from django.conf.urls import url
-from django.conf.urls.static import static
+app_name = 'registration'
 urlpatterns = [
-    path('', views.index, name='index'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', views.redirect, name='login_redirect'),
+    path('authentication/', include('django.contrib.auth.urls')),
+]
