@@ -241,7 +241,19 @@ div#contactme {
 footer .socialicon {
   margin: 15px 10px;
   padding-top: 4%;
+  color: black;
 }
+
+footer .socialicon {
+  margin: 15px 10px;
+  padding-top: 4%;
+  color: black;
+}
+
+footer .socialicon:hover {
+  color: #39375b;
+}
+
 footer .copyright {
   padding-bottom: 4%;
 }
