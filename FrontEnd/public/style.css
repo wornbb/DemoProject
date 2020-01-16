@@ -54,6 +54,59 @@ hr {
   margin: 50px auto;
 }
 
+/* headersign */
+div .navProperty {
+  background-color: #7fa998;
+  padding: 2px 3%;
+}
+
+div .navBrand {
+  font-family: "Indie Flower", cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  
+}
+/* sign page */
+div.container {
+  margin: 8% auto 0;
+  padding: 5% 0;
+  text-align: center;
+}
+
+form.form {
+  padding: 20px 0;
+  position: relative;
+}
+
+form.form input {
+  border: 1px solid #7fa998;
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Montserrat-Italic", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  font-weight: 300;
+}
+
+form.form button {
+  appearance: none;
+  outline: 10;
+  background-color: #7fa998;
+  border: 1px solid #7fa998;
+  padding: 10px 15px;
+  color: black;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+  margin-top: 1%;
+}
+
+
 /* header */
 header .navProperty {
   background-color: #ebe6e6;

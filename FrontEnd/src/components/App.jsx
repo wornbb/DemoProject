@@ -1,28 +1,32 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Title from "./Title";
-import Highlights from "./Highlights";
-import Gameshow from "./Gameshow";
-import Contact from "./Contact";
-import Hr from "./Hr";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Homepage from "./Homepage";
+import Signup from "./Signup";
+import Signin from "./Signin";
 
 function App() {
-    return (
-        <div>
-            <Header />
-            <Title />
-            <Hr />
-            <Highlights />
-            <Hr />
-            <Gameshow />
-            <Hr />
-            <Contact />
-            <Hr />
-            <Footer />
-        </div>
 
+   
+    return (
+        <Router>
+            <Switch>
+                <Route exact path="/">
+                    <Homepage />
+                </Route>
+
+                <Route path="/signup">
+                    <Signup />
+                </Route>
+
+                <Route path="/signin">
+                    <Signin />
+                </Route>
+
+            </Switch>
+        </Router>
     );
+
+
 }
 
 export default App;
