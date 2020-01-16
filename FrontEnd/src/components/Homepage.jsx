@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Title from "./Title";
-import Highlights from "./Highlights";
-import Gameshow from "./Gameshow";
-import Contact from "./Contact";
-import Hr from "./Hr";
+import Header from "./partials/Header";
+import Footer from "./partials/Footer";
+import Title from "./partials/Title";
+import Highlights from "./partials/Highlights";
+import Gameshow from "./partials/Gameshow";
+import Contact from "./partials/Contact";
+import Hr from "./partials/Hr";
 
 
 function Homepage() {

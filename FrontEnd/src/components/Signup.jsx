@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderSign from "./HeaderSign";
+import HeaderSign from "./partials/HeaderSign";
 import {Button} from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 
