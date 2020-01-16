@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 function Highlights() {
     return (
-        <div class="white-section" id="highlights">
+        <div className="white-section" id="highlights">
                 <Row>
                     <Col className="highlight-box" lg={true} md={true} sm={true}>
                         <i className="icon fas fa-dice-d20 fa-5x" />
