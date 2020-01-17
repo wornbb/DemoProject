@@ -1,5 +1,7 @@
 import React from "react";
 import HeaderSign from "./partials/HeaderSign";
+import Cookies from "universal-cookie";
+import { Button } from 'react-bootstrap';
 
 
 
@@ -7,7 +9,6 @@ function Signin() {
 
     // handle mouse event
     const [isMouseOver, setMouseOver] = React.useState(false);
-    // const [isLogin, setIsLogin] = React.useState(false);
 
     function handleMouseOver() {
         setMouseOver(true);
@@ -36,18 +37,37 @@ function Signin() {
         }
         )
     }
+    const cookies = new Cookies();
+    const [isLogin, setIsLogin] = React.useState(false);
+
+
+
 
     const submit = e => {
         e.preventDefault()
-        fetch(`https://hooks.zapier.com/hooks/catch/6496049/ohdgvlb/`, {
-            method: 'POST',
-            body: JSON.stringify(user),
-        })
+        if (user.email === "" || user.password === "") {
+            alert("Missing Info!")
+        }
+        else {
+            console.log("Hello");
+            cookies.set(
+                "userInfo",
+                user,
+                { path: "/signup" }
+            );
+            console.log(cookies);
+
+            fetch(`https://hooks.zapier.com/hooks/catch/6496049/ohdgvlb/`, {
+                credentials: 'same-origin',
+                method: 'POST',
+                body: cookies,
+            }).then(() => setIsLogin(true));/* handle response*/
+        }
         // fetch verify info from backend
     }
     // 
 
-    return (
+    const form =
         <div className="container">
             <HeaderSign />
             <div>
@@ -61,7 +81,16 @@ function Signin() {
                 </form>
             </div>
         </div>
-    );
+
+    const Download =
+        <div className="container">
+            <HeaderSign />
+            <Button className="btn" variant="secondary" size="lg">
+                <i className="fab fa-google-play" /> Download
+                        </Button>
+        </div>
+
+    return (isLogin ? Download : form);
 
 }
 

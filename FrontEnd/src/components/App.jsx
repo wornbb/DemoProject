@@ -4,6 +4,7 @@ import Homepage from "./Homepage";
 import Signup from "./Signup";
 import Signin from "./Signin";
 
+
 function App() {
 
    
@@ -15,7 +16,9 @@ function App() {
                 </Route>
 
                 <Route path="/signup">
+
                     <Signup />
+
                 </Route>
 
                 <Route path="/signin">

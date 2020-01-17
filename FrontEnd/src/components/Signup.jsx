@@ -1,20 +1,13 @@
 import React from "react";
 import HeaderSign from "./partials/HeaderSign";
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
-
+import Cookies from "universal-cookie";
 
 
 function Signup() {
-
+    // handle mouse event
     const [isMouseOver, setMouseOver] = React.useState(false);
-    const [signupinfo, setSignupInfo] = React.useState({
-        email: "",
-        password: "",
-        confirmedPassword: ""
-    });
-
-    const [isSent, setIsSent] = React.useState(false);
 
     function handleMouseOver() {
         setMouseOver(true);
@@ -22,6 +15,13 @@ function Signup() {
     function handelMouseOut() {
         setMouseOver(false)
     }
+
+    // handle user input
+    const [signupinfo, setSignupInfo] = React.useState({
+        email: "",
+        password: "",
+        confirmedPassword: ""
+    });
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -36,22 +36,44 @@ function Signup() {
         )
     }
 
+    // handel cookie
+    const cookies = new Cookies();
+
+    const [isSignUp, setIsSignUp] = React.useState(false);
+
+    //if successfully sign up
     const history = useHistory();
-    
+
     function handleClickSignin() {
         history.replace("/signin");
     }
 
+    // once submit button is clicked
     const submit = e => {
         e.preventDefault()
-        if (signupinfo.password !== signupinfo.confirmedPassword){
+        //check if passwords are matched or not
+        if (signupinfo.password !== signupinfo.confirmedPassword) {
             alert('Password Not Match!');
         }
+        // check if no user input
+        else if (signupinfo.email === "" || signupinfo.password === "" || signupinfo.confirmedPassword === "") {
+            alert("Missing Info!")
+        }
+        // post cookie to server
         else {
-        fetch(`https://hooks.zapier.com/hooks/catch/6496049/ohh1fb1/`, {
-            method: 'POST',
-            body: JSON.stringify(signupinfo),
-        }).then(() => setIsSent(true))}
+            console.log("Hello");
+            cookies.set(
+                "userInfo",
+                signupinfo,
+                { path: "/signup" }
+            );
+            console.log(cookies);
+            fetch(`https://hooks.zapier.com/hooks/catch/6496049/ohmhx9b/`, {
+                credentials: 'same-origin',
+                method: 'POST',
+                body: cookies,
+            }).then(() => setIsSignUp(true)); /* handle response*/ 
+        }
     }
 
 
@@ -77,12 +99,12 @@ function Signup() {
             <HeaderSign />
             <h1 className="success-heading"><span role="img" aria-label="SmileFace">😘</span>Thank you for your support!<span role="img" aria-label="SmileFace">😘</span></h1>
             <Button className="btn" variant="dark" size="lg" onClick={handleClickSignin}>
-                        <i className="fas fa-sign-in-alt" /> Sign in
+                <i className="fas fa-sign-in-alt" /> Sign in
                         </Button>
         </div>
 
-    return (isSent ? success : form);
-    
+    return (isSignUp ? success : form);
+
 
 }
 
