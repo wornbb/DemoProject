@@ -1,7 +1,7 @@
 # DemoProject
 ##Objective
 The object of this project is to build & publish a WebView Android App for demonstrating our skills of software development engineer. We probably will also provide access from browser which converts it to a website. 
-A sample of static website is provided at https://yishen.me. Please note that this website is still under active development.
+A sample of static website is provided at http://yishen.me. Please note that this website is still under active development.
 ## Tech Stack
 Note: The tech is decided based on their effectiveness of demonstrating our skills rather than their fitness or necessity for the functionality of the app. 
 ### Front-end: 
