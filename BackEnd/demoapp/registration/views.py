@@ -9,8 +9,8 @@ from django.views.generic.edit import CreateView
 def redirect(request):
     return HttpResponseRedirect(reverse('registration:login'))
 def signup(request):
-
     return render(request, 'registration/signup.html')
 class UserCreate(CreateView):
+    template_name = 'registration/user_form.html'
     model = User
     fields = ['username', 'password','email','first_name', 'last_name']
