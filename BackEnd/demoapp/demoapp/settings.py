@@ -31,13 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration.apps.RegistrationConfig'
+    'registration.apps.RegistrationConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'demoapp.wsgi.application'
-
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -131,3 +133,11 @@ STATICFILES_DIRS = [
     ("imgs", os.path.join(BASE_DIR, '../../FrontEnd/imgs/'))
 ]
 
+# Manually added
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
